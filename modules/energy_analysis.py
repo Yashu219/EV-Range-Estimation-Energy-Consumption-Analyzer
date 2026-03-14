@@ -35,7 +35,7 @@ def calculate_efficiency(data):
     return data
 
 
-def energy_analysis(file_path="ev_data.csv"):
+def energy_analysis(file_path="data/ev_data.csv"):
     """
     Perform full energy analysis on EV dataset.
     """
