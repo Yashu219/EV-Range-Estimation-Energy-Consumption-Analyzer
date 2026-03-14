@@ -1,13 +1,21 @@
-from modules.visualization import (
-    plot_speed_vs_consumption,
-    plot_distance_vs_consumption
-)
+import matplotlib.pyplot as plt
 
-speed = [20, 40, 60, 80, 100]
-consumption_speed = [90, 110, 130, 160, 200]
 
-distance = [5, 10, 20, 40, 60]
-consumption_distance = [95, 105, 120, 140, 160]
+def plot_speed_vs_consumption(speed, consumption):
+    plt.figure()
+    plt.plot(speed, consumption, marker='o')
+    plt.title("Speed vs Energy Consumption")
+    plt.xlabel("Speed (km/h)")
+    plt.ylabel("Consumption (Wh/km)")
+    plt.grid(True)
+    plt.show()
 
-plot_speed_vs_consumption(speed, consumption_speed)
-plot_distance_vs_consumption(distance, consumption_distance)
+
+def plot_distance_vs_consumption(distance, consumption):
+    plt.figure()
+    plt.plot(distance, consumption, marker='o')
+    plt.title("Distance vs Energy Consumption")
+    plt.xlabel("Distance (km)")
+    plt.ylabel("Consumption (Wh/km)")
+    plt.grid(True)
+    plt.show()
