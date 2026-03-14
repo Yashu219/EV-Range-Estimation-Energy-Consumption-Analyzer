@@ -1,24 +1,24 @@
 import pandas as pd
+import os
 
 
-def load_dataset(file_path="data/ev_data.csv"):
+def load_dataset():
     """
     Load EV dataset from CSV file.
-    
-    Parameters:
-    file_path (str): Path to the dataset
-    
-    Returns:
-    pandas.DataFrame
     """
+
+    # Get project root directory
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+
+    # Build correct dataset path
+    file_path = os.path.join(base_dir, "data", "ev_data.csv")
+
     data = pd.read_csv(file_path)
     return data
 
 
 def calculate_energy_per_km(data):
     """
-    Calculate energy consumed per kilometer.
-    
     Energy_per_km = Consumption / Distance
     """
     data["Energy_per_km"] = data["Consumption"] / data["Distance"]
@@ -27,27 +27,22 @@ def calculate_energy_per_km(data):
 
 def calculate_efficiency(data):
     """
-    Calculate EV efficiency (km per unit energy).
-    
     Efficiency = Distance / Consumption
     """
     data["Efficiency"] = data["Distance"] / data["Consumption"]
     return data
 
 
-def energy_analysis(file_path="data/ev_data.csv"):
+def energy_analysis():
     """
-    Perform full energy analysis on EV dataset.
+    Perform full energy analysis
     """
-    
-    # Load data
-    data = load_dataset(file_path)
 
-    # Calculate metrics
+    data = load_dataset()
+
     data = calculate_energy_per_km(data)
     data = calculate_efficiency(data)
 
-    # Summary statistics
     avg_energy = data["Energy_per_km"].mean()
     avg_efficiency = data["Efficiency"].mean()
 
