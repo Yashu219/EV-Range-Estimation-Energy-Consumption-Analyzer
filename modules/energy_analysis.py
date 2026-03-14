@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def load_dataset(file_path="ev_data.csv"):
+def load_dataset(file_path="data/ev_data.csv"):
     """
     Load EV dataset from CSV file.
     
