@@ -18,7 +18,7 @@ battery capacity, speed, consumption] and shows how energy is being used.
 - Results saved to `range_results.csv`
 
 ## 🛠️ Tech Stack
-Python · [Pandas · NumPy · Matplotlib] · [Tkinter / Streamlit / Flask]
+Python · [Pandas · NumPy · Matplotlib] · Streamlit 
 
 ## 📂 Project Structure
 ```
