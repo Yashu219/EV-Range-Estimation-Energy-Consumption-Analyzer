@@ -1,26 +1,27 @@
 # ⚡ EV Range Estimation & Energy Consumption Analyzer
 
-A Python-based tool that estimates the driving range of an electric vehicle
-and analyzes its energy consumption from [driving/vehicle] data, with
-visualizations and an interactive interface.
+A Python tool that estimates the driving range of an electric vehicle and
+analyzes its energy consumption from vehicle/driving data, with charts and a
+user interface.
 
 ## 📌 Problem Statement
-Range anxiety is a major barrier to EV adoption. Range depends on battery
-capacity, speed, load, terrain and driving style, so a fixed number is
-misleading. This project [estimates range from X inputs and shows where
-the energy goes].
+Range anxiety is one of the biggest barriers to EV adoption. Real range
+changes with speed, load and driving conditions, so a single manufacturer
+figure can be misleading. This project estimates range from [inputs, e.g.
+battery capacity, speed, consumption] and shows how energy is being used.
 
 ## ✨ Features
-- Range estimation from [battery capacity, speed, consumption rate, etc.]
-- Energy consumption analysis ([per km / per trip / by speed])
-- Data visualizations of [consumption vs speed, range comparison, etc.]
-- [Interactive interface to enter vehicle parameters and see results]
-- Results exported to `range_results.csv`
+- Range estimation from [battery capacity, consumption rate, speed, etc.]
+- Energy consumption analysis [per km / per trip / by speed]
+- Visualizations of [consumption vs speed, range comparison, etc.]
+- User interface to enter parameters and view results
+- Results saved to `range_results.csv`
 
 ## 🛠️ Tech Stack
-Python · Pandas · NumPy · Matplotlib · [Streamlit / Flask / Tkinter]
+Python · [Pandas · NumPy · Matplotlib] · [Tkinter / Streamlit / Flask]
 
 ## 📂 Project Structure
+```
 EV-Range-Estimation-Energy-Consumption-Analyzer/
 │
 ├── data/
@@ -37,32 +38,39 @@ EV-Range-Estimation-Energy-Consumption-Analyzer/
 ├── app.py                       # Main entry point
 ├── range_results.csv            # Generated output
 └── README.md
+```
 
 ## ⚙️ How It Works
-1. Load vehicle/driving data from `ev_data.csv`
-2. Calculate range using: `Range = Usable Battery Energy (kWh) / Consumption (kWh/km)`
-   [adjust to your actual formula and any correction factors]
-3. Analyze energy consumption against [speed / load / etc.]
-4. Visualize the results and save them to `range_results.csv`
+1. `data/ev_data.csv` supplies the vehicle and driving data.
+2. `modules/range_calculation.py` computes the estimated range using
+   `Range (km) = Usable Battery Energy (kWh) / Consumption (kWh/km)`
+   [adjust to your actual formula].
+3. `modules/energy_analysis.py` analyzes energy consumption.
+4. `modules/Visualiz.py` generates the plots.
+5. `interface/interface.py` lets the user enter inputs and view results.
+6. Output is saved to `range_results.csv`.
 
 ## 🚀 Getting Started
+```bash
 git clone https://github.com/Yashu219/EV-Range-Estimation-Energy-Consumption-Analyzer.git
 cd EV-Range-Estimation-Energy-Consumption-Analyzer
 pip install -r requirements.txt
-python app.py        # or: streamlit run app.py
+python app.py
+```
 
 ## 📊 Results
-- [Key finding 1, e.g. "Consumption rises sharply above X km/h"]
-- [Key finding 2, e.g. "Estimated range for Vehicle A: ~X km"]
+- [Key finding 1, e.g. how consumption changes with speed]
+- [Key finding 2, e.g. estimated range for the tested vehicle]
 
-![Chart](interface/Figure_1.png)
-![Interface](interface/Figure_2.png)
+| Interface | Chart |
+|-----------|-------|
+| ![Interface](screenshots/interface.png) | ![Chart](screenshots/chart.png) |
 
 ## 🔮 Future Improvements
-- Add real-time data from a vehicle/OBD or battery sensor
-- Include temperature, terrain and regenerative braking effects
-- Add an ML model to predict range more accurately
-- Deploy as a web app
+- Real-time data from the vehicle or battery sensors
+- Temperature, terrain and regenerative braking effects
+- ML model for more accurate range prediction
+- Web deployment
 
 ## 👩‍💻 Author
-**Yashaswini A** · yashaswinia21@gmail.com 
+**Yashaswini A** · yashaswinia21@gmail.com · [GitHub](https://github.com/Yashu219)
