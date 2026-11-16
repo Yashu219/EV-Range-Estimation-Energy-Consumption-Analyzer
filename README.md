@@ -65,4 +65,4 @@ python app.py        # or: streamlit run app.py
 - Deploy as a web app
 
 ## 👩‍💻 Author
-**Yashaswini A** · yashaswinia21@gmail.com · [LinkedIn] · [GitHub]
+**Yashaswini A** · yashaswinia21@gmail.com 
