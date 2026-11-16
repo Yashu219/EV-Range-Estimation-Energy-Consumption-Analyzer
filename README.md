@@ -64,7 +64,7 @@ python app.py
 
 | Interface | Chart |
 |-----------|-------|
-| ![Interface](screenshots/interface.png) | ![Chart](screenshots/chart.png) |
+| ![Interface](interface/Figure_1.png) | ![Chart](interface/Figure_2.png) |
 
 ## 🔮 Future Improvements
 - Real-time data from the vehicle or battery sensors
